@@ -4,7 +4,7 @@
   "description": "An awesome library",
   "main": "ng-conf-library.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "tsc && karma start",
     "prepublish": "typings install && tsc"
   },
   "typings": "./ng-conf-library.d.ts",
@@ -26,13 +26,20 @@
     "angular2": "~2.0.0-beta.15"
   },
   "devDependencies": {
-    "angular2": "^2.0.0-beta.15",
+    "angular2": "2.0.0-beta.15",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.35.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-jasmine": "^0.3.8",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-typescript-preprocessor": "0.0.21",
+    "phantomjs-prebuilt": "^2.1.7",
     "reflect-metadata": "^0.1.2",
-    "rxjs": "^5.0.0-beta.2",
+    "rxjs": "5.0.0-beta.2",
+    "systemjs": "^0.19.26",
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
-    "zone.js": "^0.6.11"
+    "zone.js": "^0.6.12"
   }
 }

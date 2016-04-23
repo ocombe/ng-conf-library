@@ -13,6 +13,7 @@
   "files": [
     "./typings/main.d.ts",
     "./ng-conf-library.ts",
-    "./src/service.ts"
+    "./src/service.ts",
+    "./test/service.spec.ts"
   ]
 }
