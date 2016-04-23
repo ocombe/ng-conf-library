@@ -18,3 +18,9 @@
   "angular2": "~2.0.0-beta.15"
 }
 ```
+
+### 2. Write a service
+- Create a folder named `src`
+- In this folder add a Typescript file for your service, the name of the file doesn't matter
+- Write a simple service (don't forget to export it) // [Video](https://youtu.be/3miw5X6pUDA)
+- Create a main Typescript file at the root named after your library and export * from your library // [Video](https://youtu.be/H_kZ7vLowBw)
