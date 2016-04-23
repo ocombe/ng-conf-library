@@ -65,9 +65,9 @@
 "./ng-conf-library.ts",
 "./src/service.ts"
 ```
-- In `package.json` add a prepublish script with `typings install && tsc` // [Video](https://youtu.be/dv7ml7LXuqM)
-- Test that script with the command `npm run prepublish` // [Video](https://youtu.be/dv7ml7LXuqM)
-- Add a `typings` property in your `package.json` and add it the name of your main typings file (extension .d.ts) that was just created by your prepublish script // [Video](https://youtu.be/dv7ml7LXuqM)
+- In `package.json` add a prepublish script with `typings install && tsc` // [Video](https://youtu.be/dv7ml7LXuqM?t=11s)
+- Test that script with the command `npm run prepublish` // [Video](https://youtu.be/dv7ml7LXuqM?t=20s)
+- Add a `typings` property in your `package.json` and add it the name of your main typings file (extension .d.ts) that was just created by your prepublish script // [Video](https://youtu.be/dv7ml7LXuqM?t=36s)
 
 ### 4. Tests
 - Install karma & its dependencies: `npm install -D karma karma-phantomjs-launcher phantomjs-prebuilt karma-jasmine karma-typescript-preprocessor@0.0.21 jasmine-core systemjs`
@@ -75,9 +75,9 @@
 - Create a file named `karma-test-shim.js` and copy the content of [this file](https://github.com/ocombe/ng-conf-library/blob/master/karma-test-shim.js) in it
 - Create a `test` folder and create a file named `service.spec.ts`
 - Add this new file to the files property of `tsconfig.json` // [Video](https://youtu.be/fsEZiCkos-Q)
-- Edit the test script of `package.json` and type `tsc && karma start` // [Video](https://youtu.be/fsEZiCkos-Q)
-- Write some tests // [Video](https://youtu.be/fsEZiCkos-Q)
-- Run the tests with `npm test` // [Video](https://youtu.be/fsEZiCkos-Q)
+- Edit the test script of `package.json` and type `tsc && karma start` // [Video](https://youtu.be/fsEZiCkos-Q?t=6s)
+- Write some tests // [Video](https://youtu.be/fsEZiCkos-Q?t=13s)
+- Run the tests with `npm test` // [Video](https://youtu.be/fsEZiCkos-Q?t=2m24s)
 
 ### 5. Publish
 - Create a file `.npmignore` and copy the content of `.gitignore` in it
