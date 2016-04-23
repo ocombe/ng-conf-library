@@ -55,10 +55,9 @@ __build__/**
 .idea/
 *.swp
 
-# Generated #
-*.js
-!karma.conf.js
-!karma-test-shim.js
-*.map
-*.d.ts
-typings
+# Dev #
+*.ts
+!*.d.ts
+tests
+karma.conf.js
+karma-test-shim.js

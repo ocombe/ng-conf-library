@@ -78,3 +78,27 @@
 - Edit the test script of `package.json` and type `tsc && karma start` // [Video](https://youtu.be/fsEZiCkos-Q)
 - Write some tests // [Video](https://youtu.be/fsEZiCkos-Q)
 - Run the tests with `npm test` // [Video](https://youtu.be/fsEZiCkos-Q)
+
+### 5. Publish
+- Create a file `.npmignore` and copy the content of `.gitignore` in it
+- Fix `.gitignore` to avoid the commit of generated files. Add the following at the end:
+```
+# Generated #
+*.js
+!karma.conf.js
+!karma-test-shim.js
+*.map
+*.d.ts
+typings
+```
+- Fix `.npmignore` to avoid publishing the Typescript files & the test files. Add the following at the end:
+```
+# Dev #
+*.ts
+!*.d.ts
+tests
+karma.conf.js
+karma-test-shim.js
+```
+- Update the `prepublish` script in `package.json` to run your tests with `typings install && npm test`
+- Check the version and publish your library with `npm publish` !
