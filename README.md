@@ -24,3 +24,47 @@
 - In this folder add a Typescript file for your service, the name of the file doesn't matter
 - Write a simple service (don't forget to export it) // [Video](https://youtu.be/3miw5X6pUDA)
 - Create a main Typescript file at the root named after your library and export * from your library // [Video](https://youtu.be/H_kZ7vLowBw)
+
+### 3. Typescript & typings
+- Install Typescript & typings: `npm install -D typescript typings`
+- Create 2 file at the root named `tsconfig.json` & `typings.json`
+- In `tsconfig.json` write:
+```js
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es5",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "declaration": true,
+    "moduleResolution": "node"
+  },
+  "files": [
+
+  ]
+}
+```
+- In `typings.json` write:
+```js
+{
+  "ambientDevDependencies": {
+    "jasmine": "github:DefinitelyTyped/DefinitelyTyped/jasmine/jasmine.d.ts#dd638012d63e069f2c99d06ef4dcc9616a943ee4"
+  },
+  "ambientDependencies": {
+    "es6-shim": "github:DefinitelyTyped/DefinitelyTyped/es6-shim/es6-shim.d.ts#6697d6f7dadbf5773cb40ecda35a76027e0783b2",
+    "node": "github:DefinitelyTyped/DefinitelyTyped/node/node.d.ts#aee0039a2d6686ec78352125010ebb38a7a7d743"
+  }
+}
+```
+- In the file `tsconfig.json` edit the `files` property and add the following (rename `ng-conf-library` with the name of your lib): // [Video](https://youtu.be/dv7ml7LXuqM)
+```
+"./typings/main.d.ts",
+"./ng-conf-library.ts",
+"./src/service.ts"
+```
+- In `package.json` add a prepublish script with `typings install && tsc` // [Video](https://youtu.be/dv7ml7LXuqM)
+- Test that script with the command `npm run prepublish` // [Video](https://youtu.be/dv7ml7LXuqM)
+- Add a `typings` property in your `package.json` and add it the name of your main typings file (extension .d.ts) that was just created by your prepublish script // [Video](https://youtu.be/dv7ml7LXuqM)

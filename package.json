@@ -4,8 +4,10 @@
   "description": "An awesome library",
   "main": "ng-conf-library.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "typings install && tsc"
   },
+  "typings": "./ng-conf-library.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ocombe/ng-conf-library.git"
