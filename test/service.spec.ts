@@ -1,5 +1,5 @@
 import {SampleService} from "../src/service";
-import {beforeEachProviders, it, describe, expect, inject} from "angular2/testing";
+import {beforeEachProviders, inject, expect, it, describe} from "@angular/core/testing";
 
 export function main() {
     describe("Sample service", () => {

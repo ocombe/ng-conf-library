@@ -11,14 +11,41 @@ System.config({
     baseURL: '/base/',
     defaultJSExtensions: true,
     map: {
-        'angular2': 'node_modules/angular2',
-        'rxjs': 'node_modules/rxjs'
+        'rxjs': 'node_modules/rxjs',
+        '@angular': 'node_modules/@angular'
+    },
+    packages: {
+        '@angular/core': {
+            main: 'index.js'
+        },
+        '@angular/compiler': {
+            main: 'index.js'
+        },
+        '@angular/common': {
+            main: 'index.js'
+        },
+        '@angular/platform-browser': {
+            main: 'index.js'
+        },
+        '@angular/platform-browser-dynamic': {
+            main: 'index.js'
+        }
     }
 });
 
-System.import('angular2/src/platform/browser/browser_adapter').then(function(browser_adapter) {
-    browser_adapter.BrowserDomAdapter.makeCurrent();
+Promise.all([
+    System.import('@angular/core/testing'),
+    System.import('@angular/platform-browser-dynamic/testing')
+]).then(function (providers) {
+    var testing = providers[0];
+    var testingBrowser = providers[1];
+
+    testing.setBaseTestProviders(testingBrowser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
+        testingBrowser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS);
+
 }).then(function() {
+    // Finally, load all spec files.
+    // This will run the tests directly.
     return Promise.all(
         Object.keys(window.__karma__.files) // All files served by Karma.
             .filter(onlySpecFiles)
@@ -32,14 +59,7 @@ System.import('angular2/src/platform/browser/browser_adapter').then(function(bro
                     }
                 });
             }));
-})
-    .then(function() {
-        __karma__.start();
-    }, function(error) {
-        console.error(error.stack || error);
-        __karma__.start();
-    });
-
+}).then(__karma__.start, __karma__.error);
 
 function onlySpecFiles(path) {
     return /[\.|_]spec\.js$/.test(path);
