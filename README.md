@@ -1,4 +1,5 @@
 # How to create a library for Angular 2 - ng-conf 2016
+This is a basic setup for Angular 2 (or TypeScript in general) libraries, if you want something more advanced check out [Angular 2 Library Seed](https://github.com/preboot/angular2-library-seed)
 
 ### 1. Init the project
 - Create a repository on Github:
